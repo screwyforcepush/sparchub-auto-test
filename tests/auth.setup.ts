@@ -6,8 +6,17 @@ import { performLogin } from './helpers/authHelper';
 
 // Ensure auth directory exists
 setup('authenticate', async ({ browser }, testInfo) => {
-  // Determine which credentials to use based on project name
+  // Add this check at the beginning of the setup
   const projectName = testInfo.project.name;
+  if (projectName.includes('corporate') && !process.env.CORPORATE_EMAIL) {
+    throw new Error('Required environment variables are not set for corporate login');
+  } else if (projectName.includes('sage') && !process.env.SAGE_EMAIL) {
+    throw new Error('Required environment variables are not set for sage login');
+  } else if (projectName.includes('professor') && !process.env.PROFESSOR_EMAIL) {
+    throw new Error('Required environment variables are not set for professor login');
+  }
+
+  // Determine which credentials to use based on project name
   let config;
   
   if (projectName.includes('sage')) {

@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 // // Define storage state path
 export const CORPORATE_STORAGE_STATE = path.join(__dirname, 'playwright', '.auth', 'corporate.json');
