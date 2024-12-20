@@ -42,7 +42,7 @@ jobs:
       
       - name: Run Playwright tests
         run: |
-          DEBUG=pw:api npx playwright test
+          DEBUG=pw:error* npx playwright test
       
       - name: Upload test results
         if: always()
