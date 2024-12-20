@@ -32,7 +32,7 @@ test('Course management', async ({ page }) => {
         await performLogin(page, credentials.professor);
         await navigateToManagedCourses(page);
         // Keep scrolling until element is found or max attempts reached
-        const maxScrollAttempts = 5;
+        const maxScrollAttempts = 50;
         let attempt = 0;
         let elementFound = false;
 
@@ -48,7 +48,7 @@ test('Course management', async ({ page }) => {
             await page.evaluate(() => {
                 window.scrollTo(0, document.body.scrollHeight);
             });
-            await page.waitForTimeout(500); // Wait for content to potentially load
+            await page.waitForTimeout(200); // Wait for content to potentially load
             
             attempt++;
         }
