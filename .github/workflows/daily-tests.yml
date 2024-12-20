@@ -2,7 +2,7 @@ name: Daily Automated Tests
 on:
   schedule:
     # Run at 2 AM UTC (adjust this time as needed)
-    - cron: '0 2 * * *'
+    - cron: '15 2 * * *'
   workflow_dispatch: # Allows manual triggering
 
 permissions:
