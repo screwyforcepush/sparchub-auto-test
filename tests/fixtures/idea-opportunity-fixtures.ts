@@ -146,7 +146,9 @@ export const test = base.extend<IdeaFixtures>({
       //check the radio button to mark as high certainty
       await page.locator('div:nth-child(4) > div > div > div > div > div > div > .ion-android-radio-button-off').first().click();
       await page.getByText('Add a comment about this score change').isVisible();
+      await page.waitForTimeout(200);
       await page.getByRole('textbox').fill('consult with domain experts to unbox an uncertainty black box');
+      await page.waitForTimeout(200);
       await page.getByRole('button', { name: 'Submit' }).click();
       await page.waitForTimeout(200);
     };

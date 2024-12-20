@@ -15,7 +15,6 @@ test('Opportunity configuration', async ({ page, createNewOpportunity, deleteOpp
     //update uncertainty
     await updateUncertainty();    
 
-    //TODO adding 5+ uncertainties changes the opportunity to "positioning options". should create a new test for this
     // Handle optional modal close button for "positioning options" scenario
     const closeButton = page.getByRole('button', { name: 'Close' });
     if (await closeButton.isVisible({ timeout: 1000 })) {
