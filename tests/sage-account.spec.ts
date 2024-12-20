@@ -96,5 +96,4 @@ test('Company and user management', async ({ page }) => {
     await test.step('assertion error log', async () => {
         expect(test.info().errors).toHaveLength(0);
       });
-
 });

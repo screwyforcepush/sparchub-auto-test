@@ -18,7 +18,7 @@ test('Course management', async ({ page }) => {
         await page.getByRole('button', { name: 'New' }).click();
         await page.getByRole('textbox').first().fill(courseName);
         await page.getByRole('textbox').nth(1).fill(courseAccessCode);
-        await page.waitForTimeout(500); // Wait for content to potentially load
+        await page.waitForTimeout(5000); // wait for bubble db to check course name is available
         await page.getByRole('button', { name: 'Save changes' }).click();
     });
 
