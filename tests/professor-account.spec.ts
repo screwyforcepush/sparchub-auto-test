@@ -45,9 +45,7 @@ test('Course management', async ({ page }) => {
             }
 
             // Scroll and wait for any dynamic content to load
-            await page.evaluate(() => {
-                window.scrollTo(0, document.body.scrollHeight);
-            });
+            await page.mouse.wheel(0, 1000); // Simulates mouse wheel scroll down
             await page.waitForTimeout(200); // Wait for content to potentially load
             
             attempt++;

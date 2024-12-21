@@ -143,6 +143,7 @@ export const test = base.extend<IdeaFixtures>({
 
   updateUncertainty: async ({ page }, use) => {
     const updateUncertaintyFn = async () => {
+      await page.mouse.wheel(0, 500)
       //check the radio button to mark as high certainty
       await page.locator('div:nth-child(4) > div > div > div > div > div > div > .ion-android-radio-button-off').first().click();
       await page.getByText('Add a comment about this score change').isVisible();
