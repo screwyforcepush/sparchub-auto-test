@@ -40,6 +40,7 @@ test('Course management', async ({ page }) => {
             // Try to find the element
             const element = await page.getByText(courseName).first();
             if (await element.isVisible()) {
+                await page.mouse.wheel(0, 100);
                 elementFound = true;
                 break;
             }
