@@ -40,7 +40,8 @@ test('Course management', async ({ page }) => {
             // Try to find the element
             const element = await page.getByText(courseName).first();
             if (await element.isVisible()) {
-                await page.mouse.wheel(0, 100);
+                await page.waitForTimeout(200);
+                await page.mouse.wheel(0, 1000); // Simulates mouse wheel scroll down
                 elementFound = true;
                 break;
             }
