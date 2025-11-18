@@ -17,5 +17,5 @@ export async function performLogin(page: Page, config: Credentials) {
 export async function performLogout(page: Page): Promise<void> {
   await page.locator('div.bubble-element:has(svg.feather-bell)').locator('button.bubble-element.Button.clickable-element:has(~ div.bubble-element.Image.bubble-legacy-image):has(~ button.ion-arrow-down-b)[style*="cursor: pointer"]').click();
   await page.getByText('Log out').click();
-  await page.waitForTimeout(2000); // wait a couple seconds because the website is slow
+  await page.waitForTimeout(2000); // wait a couple seconds because the website is slow.
 } 
